@@ -1,0 +1,22 @@
+{
+    "ANALYSIS": {
+        "is_remote": false,
+        "location": "F:\\Python\\CronSchedulerExt\\analysis"
+    },
+    "LOG": {
+        "is_remote": false,
+        "location": "F:\\Python\\CronSchedulerExt\\log"
+    },
+    "ROOT": {
+        "is_remote": false,
+        "location": "F:\\Python\\CronSchedulerExt"
+    },
+    "SETTINGS": {
+        "is_remote": false,
+        "location": "F:\\Python\\CronSchedulerExt\\settings.json"
+    },
+    "TAB": {
+        "is_remote": false,
+        "location": "F:\\Python\\CronSchedulerExt\\tab.tab"
+    }
+}

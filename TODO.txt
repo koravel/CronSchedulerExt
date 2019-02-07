@@ -1,0 +1,10 @@
+-addtional params
+--non-default durability, timeout, instances amount in Crontab
+-unit tests
+-code review?
+--settings params text to enum
+--move all that is possible from Constants
+--add exception insetad of f.e. numbers
+-coments
+-remote init files?
+-queue priority
