@@ -1,4 +1,4 @@
-import Router
+import PathProvider
 
 
 class Settings:
@@ -11,14 +11,14 @@ class Settings:
     @staticmethod
     def save():
         try:
-            Settings.writer.write(Settings.settings, Router.routes["SETTINGS"].location)
+            Settings.writer.write(Settings.settings, PathProvider.pathes["SETTINGS"].location)
         except Exception as ex:
             raise ex
 
     @staticmethod
     def load():
         try:
-            Settings.settings = Settings.reader.read(Router.routes["SETTINGS"].location)
+            Settings.settings = Settings.reader.read(PathProvider.pathes["SETTINGS"].location)
         except Exception as ex:
             Settings.set_default()
             raise ex

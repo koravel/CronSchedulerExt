@@ -10,8 +10,6 @@ class CronJob:
         self.invalid = _invalid
         self.unreachable = _unreachable
         self.last_run = None
-        self.timeout = None
-        self.instances_amount = None
         self.enabled = True
 
     def setTimeout(self, timeout):

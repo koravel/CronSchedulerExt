@@ -1,6 +1,6 @@
 from datetime import datetime
 
-import Router
+import PathProvider
 import Utils
 from Utils import Constants
 
@@ -11,6 +11,7 @@ class Analyzer:
     __wrong_job_text = "wrong job style on line {}"
     __unreachable_job_text = 'unreachable job on line {}'
     __run_command_text = "run time for command {}"
+    __command_log = "command {} will run {}'{} time at {}"
 
     def __init__(self, crontab, iterations_amount, logger):
         self.iterations_amount = iterations_amount
@@ -32,13 +33,13 @@ class Analyzer:
             self.logger.log_info(Analyzer.__run_command_text.format(job.command))
             schedule = job.schedule(datetime.now())
             for i in range(1, self.iterations_amount + 1):
-                self.logger.log_info(Constants.COMMAND_LOG.format(job.command, i, Constants.get_numeric_suffix(i),
+                self.logger.log_info(Analyzer.__command_log.format(job.command, i, Utils.get_numeric_suffix(i),
                                                                   Analyzer.get_next_iteration(schedule)))
         self.__line += 1
 
     def analyze_all(self):
         self.logger.log_info(Utils.Constants.FANCY_LOG_SEPARATOR)
-        self.logger.log_info(Analyzer.__analyzing_text.format(Router.routes["TAB"].location, self.iterations_amount))
+        self.logger.log_info(Analyzer.__analyzing_text.format(PathProvider.pathes["TAB"].location, self.iterations_amount))
 
         for job in self.crontab.jobs:
             self.analyze_single(job)

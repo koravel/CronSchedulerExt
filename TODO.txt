@@ -8,3 +8,4 @@
 -coments
 -remote init files?
 -queue priority
+-resolve dependency between stop_event and stop_all_therads(joins)

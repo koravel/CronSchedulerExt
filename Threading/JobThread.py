@@ -11,9 +11,8 @@ class JobThread(threading.Thread):
     __reach_timeout_text = "Job [{}] has reached timeout limit"
     __executed_text = "Job [{}] executed"
 
-    def __init__(self, job, logger):
-        super(JobThread, self).__init__()
-
+    def __init__(self, job, logger, name):
+        super(JobThread, self).__init__(name=name)
         self.job = job
         self.logger = logger
 
